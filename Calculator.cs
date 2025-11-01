@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +10,55 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            for(int i = 1; i < 10; i++)
+            try
             {
-                for(int j = 1; j < 10; j++)
+                Console.Write("Калькулятор\n");
+                Console.Write("Введите число 1: ");
+                double a = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Введите число 2: ");
+                double b = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Выбирите действие: + - * /");
+                string c = Console.ReadLine();
+
+                if (c == "+")
                 {
-                    int sum = i * j;
-                    Console.WriteLine(sum);
+                    double result = a + b;
+                    Console.WriteLine(result);
                 }
-                Console.WriteLine();
+
+                else if(c == "-")
+                {
+                    double result = a - b;
+                    Console.WriteLine(result);
+                }
+
+                else if (c == "*")
+                {
+                    double result = a * b;
+                    Console.WriteLine(result);
+                }
+
+                else if (c == "/")
+                {
+                    double result = a / b;
+                    Console.WriteLine(result);
+
+                    if(b == 0)
+                    {
+                        Console.WriteLine("Деление на 0 невозможно");
+                    }
+                }
+
             }
+
+            catch
+            {
+                Console.WriteLine("Введите число");
+            }
+
+            
         }
     }
 }
+
